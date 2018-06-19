@@ -3,8 +3,6 @@ package com.spd;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class DemoEntryPoint {
 	public static void main(String[] args) {

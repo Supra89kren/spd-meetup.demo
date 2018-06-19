@@ -18,6 +18,7 @@ apply{
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web")
 	testCompile("junit:junit")
+	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 configure<JavaPluginConvention> {
