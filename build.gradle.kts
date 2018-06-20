@@ -17,6 +17,9 @@ apply{
 
 dependencies {
 	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("net.rakugakibox.spring.boot:orika-spring-boot-starter:1.6.0")
+	compile("org.springframework.boot:spring-boot-starter-data-jpa")
+	compile("com.h2database:h2")
 	testCompile("junit:junit")
 	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
