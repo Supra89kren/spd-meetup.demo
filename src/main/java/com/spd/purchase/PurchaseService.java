@@ -1,7 +1,7 @@
 package com.spd.purchase;
 
-import java.util.Optional;
+import java.util.List;
 
 public interface PurchaseService {
-	Optional<PurchaseModel> getPurchase(Long purchaseId);
+	List<PurchaseModel> findPurchasesByCustomerId(Long customerId);
 }

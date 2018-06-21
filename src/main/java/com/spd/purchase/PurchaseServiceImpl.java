@@ -3,7 +3,8 @@ package com.spd.purchase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PurchaseServiceImpl implements PurchaseService {
@@ -15,8 +16,10 @@ public class PurchaseServiceImpl implements PurchaseService {
 	}
 
 	@Override
-	public Optional<PurchaseModel> getPurchase(Long purchaseId) {
-		return purchaseRepository.findById(purchaseId)
-				.map(PurchaseModel::new);
+	public List<PurchaseModel> findPurchasesByCustomerId(Long customerId) {
+		return purchaseRepository.findPurchasesByCustomerId(customerId)
+				.stream()
+				.map(PurchaseModel::new)
+				.collect(Collectors.toList());
 	}
 }

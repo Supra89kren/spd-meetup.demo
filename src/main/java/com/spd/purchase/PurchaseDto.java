@@ -1,34 +1,31 @@
 package com.spd.purchase;
 
 public class PurchaseDto {
-	private Long id;
+	private Long purchaseId;
 	private Long customerId;
 	private String productName;
 
-	public Long getId() {
-		return id;
+	public Long getPurchaseId() {
+		return purchaseId;
 	}
 
-	public PurchaseDto setId(Long id) {
-		this.id = id;
-		return this;
+	public void setPurchaseId(Long purchaseId) {
+		this.purchaseId = purchaseId;
 	}
 
 	public Long getCustomerId() {
 		return customerId;
 	}
 
-	public PurchaseDto setCustomerId(Long customerId) {
+	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
-		return this;
 	}
 
 	public String getProductName() {
 		return productName;
 	}
 
-	public PurchaseDto setProductName(String productName) {
+	public void setProductName(String productName) {
 		this.productName = productName;
-		return this;
 	}
 }

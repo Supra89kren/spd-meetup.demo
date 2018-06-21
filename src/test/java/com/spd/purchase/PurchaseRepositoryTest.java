@@ -7,10 +7,12 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Optional;
+import java.util.List;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -22,12 +24,15 @@ public class PurchaseRepositoryTest {
 
 	@Test
 	public void expectedEntityWithId12ToBeReturned() {
-		Optional<Purchase> result = purchaseRepository.findById(12L);
+		List<Purchase> purchases = purchaseRepository.findPurchasesByCustomerId(13L);
 
-		assertThat(result.isPresent(), is(true));
-		Purchase purchase = result.get();
-		assertThat(purchase.getId(), equalTo(12L));
-		assertThat(purchase.getCustomerId(), equalTo(13L));
-		assertThat(purchase.getProductName(), equalTo("best product"));
+		assertNotNull(purchases);
+		assertThat(purchases, hasSize(2));
+		assertThat(purchases.get(0).getId(), equalTo(1002L));
+		assertThat(purchases.get(0).getCustomerId(), equalTo(13L));
+		assertThat(purchases.get(0).getProductName(), equalTo("best product"));
+		assertThat(purchases.get(1).getId(), equalTo(1003L));
+		assertThat(purchases.get(1).getCustomerId(), equalTo(13L));
+		assertThat(purchases.get(1).getProductName(), equalTo("other product"));
 	}
 }
