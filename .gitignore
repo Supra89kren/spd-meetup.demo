@@ -19,3 +19,5 @@ target
 .sts4-cache/
 tmp*
 grapes
+gradlew
+gradlew.bat
