@@ -1,7 +1,6 @@
 package com.spd.purchase;
 
 import org.assertj.core.util.Lists;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

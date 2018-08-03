@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Mockito.doReturn;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -34,11 +35,13 @@ public class PurchaseControllerTest {
 		firstPurchase.setPurchaseId(1002L);
 		firstPurchase.setCustomerId(13L);
 		firstPurchase.setProductName("best product");
+
 		PurchaseModel secondPurchase = new PurchaseModel();
 		secondPurchase.setPurchaseId(1003L);
 		secondPurchase.setCustomerId(13L);
 		secondPurchase.setProductName("other product");
-		Mockito.when(purchaseService.findPurchasesByCustomerId(13L)).thenReturn(Lists.newArrayList(firstPurchase, secondPurchase));
+
+		doReturn(Lists.newArrayList(firstPurchase, secondPurchase)).when(purchaseService).findPurchasesByCustomerId(13L);
 
 		mockMvc.perform(get("/api/purchases/customers/{id}", 13))
 				.andExpect(status().isOk())
