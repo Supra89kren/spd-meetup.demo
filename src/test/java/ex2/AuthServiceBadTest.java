@@ -9,8 +9,6 @@ import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
 public class AuthServiceBadTest {
-	@Rule
-	public ExpectedException expectedException = ExpectedException.none();
 
 	@Test
 	public void expectedUserToBeLockedAfterReachingMaxAtemptCount() throws Exception {

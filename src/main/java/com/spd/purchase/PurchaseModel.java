@@ -1,8 +1,8 @@
 package com.spd.purchase;
 
 public class PurchaseModel {
-	private Long purchaseId;
-	private Long customerId;
+	private Integer purchaseId;
+	private Integer customerId;
 	private String productName;
 
 	public PurchaseModel() {
@@ -14,19 +14,19 @@ public class PurchaseModel {
 		productName = purchase.getProductName();
 	}
 
-	public Long getPurchaseId() {
+	public Integer getPurchaseId() {
 		return purchaseId;
 	}
 
-	public void setPurchaseId(Long purchaseId) {
+	public void setPurchaseId(Integer purchaseId) {
 		this.purchaseId = purchaseId;
 	}
 
-	public Long getCustomerId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Long customerId) {
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 

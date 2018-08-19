@@ -1,14 +1,14 @@
-package com.spd.purchase;
+package ex3;
 
-import ma.glasnost.orika.MapperFacade;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
-public class PurchaseController {
-
+public class TestController {
+	@GetMapping("/api/users/{id}")
+	public ResponseEntity<UserDto> getUserById(@PathVariable Long id) {
+		return ResponseEntity.ok(new UserDto("supra89kren@gmail.com", "Vladyslav", "Diachenko"));
+	}
 }

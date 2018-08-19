@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-interface PurchaseRepository extends JpaRepository<Purchase, Long>{
-
-	List<Purchase> findPurchasesByCustomerId(Long customerId);
+interface PurchaseRepository extends JpaRepository<Purchase, Integer> {
+	List<Purchase> findPurchasesByCustomerId(Integer customerId);
 }

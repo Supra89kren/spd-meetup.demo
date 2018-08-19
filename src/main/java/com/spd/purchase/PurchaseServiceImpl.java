@@ -1,6 +1,5 @@
 package com.spd.purchase;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,18 +7,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class PurchaseServiceImpl implements PurchaseService {
-	private PurchaseRepository purchaseRepository;
-
-	@Autowired
-	public void setPurchaseRepository(PurchaseRepository purchaseRepository) {
-		this.purchaseRepository = purchaseRepository;
-	}
 
 	@Override
-	public List<PurchaseModel> findPurchasesByCustomerId(Long customerId) {
-		return purchaseRepository.findPurchasesByCustomerId(customerId)
-				.stream()
-				.map(PurchaseModel::new)
-				.collect(Collectors.toList());
+	public List<PurchaseModel> findPurchasesByCustomerId(Integer customerId) {
+		return null;
 	}
 }

@@ -11,25 +11,25 @@ import javax.persistence.Table;
 public class Purchase {
 	@Id
 	@GeneratedValue
-	private Long id;
+	private Integer id;
 	@Column(name = "CUSTOMER_ID")
-	private Long customerId;
+	private Integer customerId;
 	@Column(name = "PRODUCT_NAME")
 	private String productName;
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Long getCustomerId() {
+	public Integer getCustomerId() {
 		return customerId;
 	}
 
-	public void setCustomerId(Long customerId) {
+	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
 	}
 
