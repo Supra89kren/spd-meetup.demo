@@ -1,8 +1,8 @@
 package ex3;
 
 public class UserDto {
-	private String firstName;
 	private String email;
+	private String firstName;
 	private String lastName;
 
 	public UserDto(String email, String firstName, String lastName) {
