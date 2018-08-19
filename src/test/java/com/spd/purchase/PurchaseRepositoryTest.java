@@ -24,14 +24,20 @@ public class PurchaseRepositoryTest {
 
 	@Test
 	public void expectedTwoPurchase() {
-		List<Purchase> purchases = purchaseRepository.findPurchasesByCustomerId(13);
+		int customerId = 13;
+		int firstPurchaseId = 1002;
+		int secondPurchaseId = 1003;
+		String firstProductName = "best product";
+		String secondProductName = "other product";
+
+		List<Purchase> purchases = purchaseRepository.findPurchasesByCustomerId(customerId);
 		assertNotNull(purchases);
 		assertThat(purchases, hasSize(2));
-		assertThat(purchases.get(0).getId(), is(1002L));
-		assertThat(purchases.get(0).getCustomerId(), is(13L));
-		assertThat(purchases.get(0).getProductName(), is("best product"));
-		assertThat(purchases.get(1).getId(), is(1003L));
-		assertThat(purchases.get(1).getCustomerId(), is(13L));
-		assertThat(purchases.get(1).getProductName(), is("other product"));
+		assertThat(purchases.get(0).getId(), is(firstPurchaseId));
+		assertThat(purchases.get(0).getCustomerId(), is(customerId));
+		assertThat(purchases.get(0).getProductName(), is(firstProductName));
+		assertThat(purchases.get(1).getId(), is(secondPurchaseId));
+		assertThat(purchases.get(1).getCustomerId(), is(customerId));
+		assertThat(purchases.get(1).getProductName(), is(secondProductName));
 	}
 }
